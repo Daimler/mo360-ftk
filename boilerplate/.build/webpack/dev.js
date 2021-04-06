@@ -34,7 +34,8 @@ const devConfig = {
   module: {
     rules: [
       {
-        test: /\.tsx?$/,
+        test: process.env.ie ? /\.(ts|js)x?$/ : /\.tsx?$/,
+        exclude: process.env.ie && /node_modules\/(?!(@daimler|react-intl)\/).*/,
         use: [
           {
             loader: 'babel-loader',

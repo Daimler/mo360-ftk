@@ -28,7 +28,7 @@ const prodConfig = {
   module: {
     rules: [
       {
-        test: /\.tsx?$/,
+        test: process.env.ie ? /\.(ts|js)x?$/ : /\.tsx?$/,
         use: [
           {
             loader: 'ts-loader',
@@ -37,7 +37,13 @@ const prodConfig = {
             },
           },
         ],
-        exclude: [path.resolve(process.cwd(), 'stories'), path.resolve(process.cwd(), 'test')],
+        exclude: process.env.ie
+          ? [
+              path.resolve(process.cwd(), 'stories'),
+              path.resolve(process.cwd(), 'test'),
+              /node_modules\/(?!(@daimler|react-intl)\/).*/,
+            ]
+          : [path.resolve(process.cwd(), 'stories'), path.resolve(process.cwd(), 'test')],
       },
     ],
   },

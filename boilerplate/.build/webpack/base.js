@@ -21,7 +21,7 @@ const path = require('path'),
 const base = {
   target: 'web',
   entry: {
-    app: './src/index.tsx',
+    app: process.env.ie ? ['core-js', './src/index.tsx'] : './src/index.tsx',
   },
   output: {
     path: path.resolve(__dirname, '../../dist/app'),

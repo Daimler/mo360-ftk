@@ -20,10 +20,12 @@
     "start": "webpack-dev-server --env.build=dev",
     "start:swidget": "webpack-dev-server --port 7070 --env.build=dev --env.swidget=true",
     "start:host": "webpack-dev-server --env.build=dev --env.exposed=true",
+    "start:ie": "webpack-dev-server --env.build=dev --env.ie=true",
     "build": "npm run clean && webpack --env.build=prod",
     "build:ci": "npm run clean && webpack --env.build=prod --env.verbose=true",
     "build:host": "npm run clean && webpack --env.build=prod --env.exposed=true",
     "build:swidget": "npm run clean && webpack --env.build=prod --env.swidget=true",
+    "build:ie": "npm run clean && webpack --env.build=prod --env.ie=true",
     "lint": "npm run lint:eslint && npm run lint:stylelint && npm run lint:prettier",
     "lint:staged": "lint-staged",
     "lint:eslint": "eslint --ext ts,tsx src",
@@ -65,7 +67,8 @@
     "react-hot-loader": "^4.12.12",
     "react": "^16.9.0",
     "regenerator-runtime": "~0.13.3",
-    "tslib": "^1.10.0"
+    "tslib": "^1.10.0",
+    "core-js": "^3.9.1"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",

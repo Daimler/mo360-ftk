@@ -21,7 +21,7 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "suppressImplicitAnyIndexErrors": true,
-    "target": "es6"
+    "target": "es5"
   },
   "include": ["typings.d.ts", "config/**/*", "src/**/*"],
   "exclude": ["stories/**/*", "test/**/*"]
